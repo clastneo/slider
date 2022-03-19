@@ -1,0 +1,72 @@
+.presentImg {
+  object-fit: cover;
+  width: 1280px;
+  height: 720px;
+}
+
+.controlArea {
+  background-color: aqua;
+  width: 1280px;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonWrapper {
+  position: relative;
+  background-color: bisque;
+  width: 300px;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.playButton {
+  background-color: teal;
+  width: 50px;
+  text-align: center;
+}
+.playButton:hover {
+  cursor: pointer;
+}
+
+.pauseButton {
+  background-color: cornflowerblue;
+  width: 50px;
+  text-align: center;
+}
+.pauseButton:hover {
+  cursor: pointer;
+}
+
+.progressBarWrapper {
+  position: relative;
+  background-color: burlywood;
+  width: 300px;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+.progressBarBackground {
+  background-color: forestgreen;
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  width: 300px;
+  height: 20px;
+}
+
+.progressBarForeground {
+  background-color: rgb(192, 148, 54);
+  position: absolute;
+  z-index: 20;
+  top: 10px;
+  width: 0;
+  height: 20px;
+}
