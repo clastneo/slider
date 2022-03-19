@@ -46,7 +46,9 @@ const clearTimer = (timer) => {
 
 function setPlay() {
   console.log(`pressed setPlay`);
-  callTimer();
+  if (!timer) {
+    callTimer();
+  }
 }
 function setPause() {
   console.log(`pressed setPause`);
