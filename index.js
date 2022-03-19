@@ -2,7 +2,7 @@ const progressBar = document.querySelector(".progressBarForeground");
 const presentImg = document.querySelector(".presentImg");
 const playButton = document.querySelector(".playButton");
 const pauseButton = document.querySelector(".pauseButton");
-let data = [
+let img = [
   { src: "img/705-1920x1080.jpg" },
   { src: "img/817-1920x1080.jpg" },
   { src: "img/947-1920x1080.jpg" },
@@ -11,6 +11,8 @@ let data = [
 
 let timer = null;
 let isPlay = false;
+
+let sec = 10;
 
 let progressValue = 0;
 let pictureCounter = 0;
@@ -25,10 +27,10 @@ const callTimer = () => {
 
     progressValue = 0;
     pictureCounter += 1;
-    if (pictureCounter >= data.length) {
+    if (pictureCounter >= img.length) {
       pictureCounter = 0;
     }
-    presentImg.src = data[pictureCounter].src;
+    presentImg.src = img[pictureCounter].src;
     callTimer();
   } else {
     timer = setTimeout(() => {
@@ -37,7 +39,7 @@ const callTimer = () => {
 
       progressBar.style.width = `${currentPercent}%`;
       callTimer();
-    }, 30);
+    }, sec);
   }
 };
 
@@ -60,7 +62,7 @@ function setPause() {
 
 playButton.addEventListener("click", setPlay, false);
 pauseButton.addEventListener("click", setPause, false);
-presentImg.src = data[0].src;
+presentImg.src = img[0].src;
 window.onload = () => {
   setPlay();
 };
