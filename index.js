@@ -10,6 +10,7 @@ let data = [
 ];
 
 let timer = null;
+let isPlay = false;
 
 let progressValue = 0;
 let pictureCounter = 0;
@@ -45,14 +46,16 @@ const clearTimer = (timer) => {
 };
 
 function setPlay() {
-  console.log(`pressed setPlay`);
-  if (!timer) {
+  if (isPlay === false) {
+    console.log(`pressed setPlay`);
     callTimer();
+    isPlay = true;
   }
 }
 function setPause() {
   console.log(`pressed setPause`);
   clearTimer(timer);
+  isPlay = false;
 }
 
 playButton.addEventListener("click", setPlay, false);
